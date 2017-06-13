@@ -1,0 +1,31 @@
+.menu {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  z-index: 6;
+  top: 15%;
+  left: 80px;
+  color: #fff;
+
+  ul {
+    li {
+      font-size: 12px;
+      cursor: pointer;
+      width: auto;
+      position: relative;
+      margin-bottom: 20px;
+      top: 100px;
+      a {
+        padding: 10px;
+        text-align: center;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+          color: #efefef;
+          background: #08191d;
+        }
+      }
+    }
+  }
+}

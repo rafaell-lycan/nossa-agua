@@ -1,0 +1,42 @@
+<loader></loader>
+<main class="main" ng-cloak ui-view=""></main>
+
+<header class="header" id="header">
+  <h1><a href="#/" ng-click="show()">Nossa Água - São Paulo</a></h1>
+  <div class="menu-icon" ng-click="openMenu()"></div>
+</header>
+
+<div class="instructions {{ show }}">
+  <h3>Escolha uma das represas ao lado</h3>
+</div>
+<section class="content" id="content">
+  <h3>sistema</h3>
+  <h2>{{ sistema }}</h2>
+  <div class="indicator">
+    <span class="pct">{{ porcentagem }}<strong>%</strong></span>
+    <span class="icon rain">hoje  <br/>{{ dia }}</span>
+    <a ng-click="share()" class="icon share facebook">Compartilhar</a>
+    <a ng-click="shareTwitter()" class="icon share twitter" data-lang="pt" data-count="none" data-hashtags="nossaaguasp">Tweetar</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    </script>
+  </div>
+</section>
+
+<section class="water" id="water" style="top: {{ water }}"></section>
+
+<section class="ruler" id="ruler"></section>
+
+<nav class="menu" id="menu">
+  <ul>
+    <li class="cantareira"><a ng-href="#/cantareira" ng-click="show()" onClick="ga('send', 'event', 'Home', 'click', 'cantareira');">cantareira</a></li>
+    <li class="alto-tiete"><a ng-href="#/alto-tiete" ng-click="show()" onClick="ga('send', 'event', 'Home', 'click', 'alto tiete');">alto tietê</a></li>
+    <li class="guarapiranga"><a ng-href="#/guarapiranga" ng-click="show()" onClick="ga('send', 'event', 'Home', 'click', 'guarapiranga');">guarapiranga</a></li>
+    <li class="cotia"><a ng-href="#/cotia" ng-click="show()" onClick="ga('send', 'event', 'Home', 'click', 'cotia');">cotia</a></li>
+    <li class="rio-grande"><a ng-href="#/rio-grande" ng-click="show()" onClick="ga('send', 'event', 'Home', 'click', 'rio grande');">rio grande</a></li>
+    <li class="rio-claro"><a ng-href="#/rio-claro" ng-click="show()" onClick="ga('send', 'event', 'Home', 'click', 'rio claro');">rio claro</a></li>
+  </ul>
+</nav>
+
+<footer class="footer">
+  DADOS <img src="images/sabesp.png">
+</footer>
