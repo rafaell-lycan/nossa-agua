@@ -1,4 +1,19 @@
-.fade-out {
-  transition: opacity 200ms ease-in-out;
+%fade-out {
   opacity: 0;
+}
+
+.fade-out-300 {
+  @extend %fade-out;
+  transition: opacity 300ms ease-in-out 1s;
+}
+
+.fade-out-500 {
+  @extend %fade-out;
+  transition: opacity 500ms ease-in-out 1s;
+
+}
+
+.fade-out-1000 {
+  @extend %fade-out;
+  transition: opacity 1s ease-in-out 1s;
 }

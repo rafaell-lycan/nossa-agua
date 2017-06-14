@@ -3,7 +3,7 @@ import DamService from './dam.service';
 import damComponent from './dam.component';
 
 const DamModule = angular
-  .module('app.core',[])
+  .module('app.dam',[])
   .service('DamService', DamService)
   .component('damInfo', damComponent);
 

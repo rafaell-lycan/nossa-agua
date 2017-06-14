@@ -1,0 +1,48 @@
+.icon {
+  font-size: rem(12px);
+  clear: both;
+  display: block;
+  font-weight: 100;
+
+  &.rain {
+    position: relative;
+    top: 150px;
+    margin: 0 auto;
+    width: 90px;
+    height: 40px;
+    background: url('/assets/images/rain-icon.png') no-repeat;
+    background-size: 50%;
+    text-indent: 50px;
+    padding-top: 13px;
+    text-align: right;
+  }
+
+  &.share {
+    position: relative;
+    top: 220px;
+    display: inline-block;
+    width: 30%;
+    padding: 10px;
+    border-radius: 100px;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    &.facebook {
+      background: #15347b;
+      &:hover {
+        background: #12295e;
+      }
+    }
+
+    &.twitter {
+      background: #0ac6f9;
+      &:hover {
+        background: #0da1c9;
+      }
+    }
+  }
+}
+
+.menu-icon {
+  display: none;
+}

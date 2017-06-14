@@ -5,8 +5,10 @@ import run from './app.run';
 
 const CoreModule = angular
   .module('app.core',[])
-  .constant('AppConstants', constants)
+  .constant('appConfig', constants)
   .config(routes)
-  .run(routes);
+  .run(run);
+
+  console.log("Core Module...")
 
 export default CoreModule;

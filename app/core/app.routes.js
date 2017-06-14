@@ -1,8 +1,10 @@
 function appConfig($stateProvider, $urlRouterProvider) {
   'ngInject';
 
+  $urlRouterProvider.otherwise('/');
+
   $stateProvider
-    .state('index', {
+    .state('home', {
       url: '/',
       template: `<dam-info></dam-info>`
     })
@@ -30,11 +32,6 @@ function appConfig($stateProvider, $urlRouterProvider) {
       url: '/rio-claro',
       template: `<dam-info></dam-info>`
     });
-
-    $urlRouterProvider.otherwise('/');
-
-    console.log("routes")
 }
-
 
 export default appConfig;

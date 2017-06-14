@@ -13,11 +13,11 @@ $base-font-family: 'Merriweather', 'PT Serif', Georgia, Cambria, 'Times New Roma
 $heading-font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
  $breakpoints: (
-    'small-only' '(max-width: 30rem)',
+    'small-only' '(max-width: 30rem)', // Less than 480px
     'small' '(min-width: 0rem)',
-    'medium' '(min-width: 48rem)',
-    'large' '(min-width: 60rem)',
-    'x-large' '(min-width: 75rem)'
+    'medium' '(min-width: 48rem)', // 768
+    'large' '(min-width: 60rem)', // 960º
+    'x-large' '(min-width: 75rem)' // 1200
 ) !default;
 
 /**

@@ -29,7 +29,7 @@
   "scripts": {
     "start": "npm run dev",
     "build": "webpack",
-    "dev": "webpack-dev-server --devtool eval --colors --hot",
+    "dev": "webpack-dev-server --hot --inline --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Rafaell Lycan <sonny.webdsg@gmail.com>",

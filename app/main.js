@@ -10,8 +10,8 @@ angular
   .module('app', [
     uiRouter,
     CoreModule.name,
+    DamModule.name,
     ComponentsModule.name,
-    DamModule.name
   ])
   .component('app', AppComponent);
 

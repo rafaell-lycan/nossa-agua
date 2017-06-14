@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  cache: true,
+  //cache: true,
   //debug: true,
   //progress: true,
   // devtool: 'hidden-source-map',
