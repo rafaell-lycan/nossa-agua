@@ -9,6 +9,4 @@ const ComponentsModule = angular
   .component('mainMenu', navComponent)
   .component('water', waterComponent);
 
-  console.log("Components...")
-
 export default ComponentsModule;

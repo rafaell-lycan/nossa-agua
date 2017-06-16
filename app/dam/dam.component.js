@@ -5,7 +5,7 @@ const damComponent = {
   template,
   controller,
   bindings: {
-    info : '<'
+    data : '<'
   }
 };
 

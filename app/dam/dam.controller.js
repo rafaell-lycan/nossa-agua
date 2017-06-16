@@ -1,7 +1,10 @@
 class DamController {
   constructor() {
     'ngInject';
-    console.log("Dam")
+  }
+
+  $onInit() {
+    console.log("DamController...", this)
   }
 }
 

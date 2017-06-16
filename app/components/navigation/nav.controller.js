@@ -1,13 +1,16 @@
 class NavController {
-  constructor($rootScope) {
+  constructor(DamService) {
     'ngInject';
-    this.scope = $rootScope;
+    this.service = DamService;
+    this.damList;
   }
 
-  $onInit() {}
+  $onInit() {
+    this.damList = this.service.getDamList();
+  }
 
   sendClickEvent(damName) {
-    this.scope.$broadcast('damChanged', damName);
+    console.log("NavController:sendClickEvent", damName)
   }
 }
 

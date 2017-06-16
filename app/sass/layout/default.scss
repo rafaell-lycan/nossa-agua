@@ -53,11 +53,12 @@ body, html {
   color: #fff;
   text-align: center;
   opacity: 0;
-  transition: all 1s linear;
+  display: none;
 
   &--is-visible {
     margin-top: 140px;
     opacity: 1;
+    display: block;
   }
 
   h3 {
@@ -87,15 +88,15 @@ body, html {
   }
 
   h2 {
-    margin-top: -10px;
+    margin: rem(-50px) 0 0;
     font-size: 55px;
     font-weight: bold;
   }
 
   .indicator {
     position: relative;
-    width: 397px;
-    height: 460px;
+    width: rem(400px);
+    height: rem(480px);
     margin: 0 auto;
     background: url('/assets/images/indicator.png') no-repeat;
     text-align: center;
@@ -104,13 +105,13 @@ body, html {
 
     .pct {
       position: relative;
-      top: 140px;
-      font-size: 150px;
+      top: rem(120px);
+      font-size: rem(150px);
       letter-spacing: -12px;
       font-weight: bold;
 
       strong {
-        font-size: 80px;
+        font-size: rem(80px);
         font-weight: bold;
       }
     }

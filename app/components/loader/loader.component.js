@@ -3,7 +3,7 @@ import controller from './loader.controller';
 
 const loaderComponent = {
   template,
-  controller,
+  controller
 };
 
 export default loaderComponent;

@@ -8,29 +8,20 @@ function appConfig($stateProvider, $urlRouterProvider) {
       url: '/',
       template: `<dam-info></dam-info>`
     })
-    .state('cantareiraSystem', {
-      url: '/cantareira',
-      template: `<dam-info></dam-info>`
-    })
-    .state('altoTieteSystem', {
-      url: '/alto-tiete',
-      template: `<dam-info></dam-info>`
-    })
-    .state('guarapirangaSystem', {
-      url: '/guarapiranga',
-      template: `<dam-info></dam-info>`
-    })
-    .state('cotiaSystem', {
-      url: '/cotia',
-      template: `<dam-info></dam-info>`
-    })
-    .state('rioGrandeSystem', {
-      url: '/rio-grande',
-      template: `<dam-info></dam-info>`
-    })
-    .state('rioClaroSystem', {
-      url: '/rio-claro',
-      template: `<dam-info></dam-info>`
+    .state('dam', {
+      url: '/:damName',
+      template: `<dam-info data="$resolve.data"></dam-info>`,
+      resolve: {
+        data : ($state, $stateParams, DamService, $rootScope) => {
+          'ngInject';
+          return DamService.getInfo($stateParams.damName)
+            .then(info => {
+              $rootScope.$broadcast('waterLevelChanged', info.amount)
+              return info;
+            })
+            .catch(err => $state.go('home'));
+        }
+      }
     });
 }
 

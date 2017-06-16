@@ -3,16 +3,14 @@ class AppController {
     'ngInject';
     this.service = DamService;
     this.scope = $rootScope;
-    this.damSelected = false;
-    this.damData;
   }
 
   $onInit() {
     this.service.get()
       .then(data => {
-        this.damData = data;
-        //this.scope.$broadcast('loaded');
-      });
+        this.scope.$broadcast('loaded');
+      })
+      .catch(console.error);
   }
 }
 

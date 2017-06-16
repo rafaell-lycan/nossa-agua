@@ -1,20 +1,13 @@
 <header class="header">
-  <h1><a href="#/" ng-click="$ctrl.goTo()">Nossa Água - São Paulo</a></h1>
+  <h1><a href="#/">Nossa Água - São Paulo</a></h1>
   <div class="menu-icon" ng-click="openMenu()"></div>
 </header>
 
 <loader></loader>
-<main class="main" ng-cloak ui-view=""></main>
-
-<div class="instructions" ng-class="{'instructions--is-visible': !$ctrl.damSelected}">
-  <h3>Escolha uma das represas ao lado</h3>
-</div>
-
 <water></water>
-
 <section class="ruler" id="ruler"></section>
-
 <main-menu></main-menu>
+<main class="main" ng-cloak ui-view=""></main>
 
 <footer class="footer">
   DADOS <img src="assets/images/sabesp.png">

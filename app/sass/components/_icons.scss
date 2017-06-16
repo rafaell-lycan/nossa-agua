@@ -6,24 +6,24 @@
 
   &.rain {
     position: relative;
-    top: 150px;
+    top: rem(140px);
     margin: 0 auto;
-    width: 90px;
-    height: 40px;
+    width: rem(90px);
+    height: rem(40px);
     background: url('/assets/images/rain-icon.png') no-repeat;
     background-size: 50%;
-    text-indent: 50px;
-    padding-top: 13px;
+    text-indent: rem(50px);
+    padding-top: 1rem;
     text-align: right;
   }
 
   &.share {
     position: relative;
-    top: 220px;
+    top: rem(200px);
     display: inline-block;
     width: 30%;
-    padding: 10px;
-    border-radius: 100px;
+    padding: rem(10px);
+    border-radius: 1rem;
     cursor: pointer;
     color: #fff;
     text-decoration: none;
