@@ -1,88 +1,123 @@
-/** BASE **/
-/*@font-face {
+@font-face {
   font-family: 'Gotham';
-  src: url('../assets/fonts/gotham-thin.eot');
-  src: url('../assets/fonts/gotham-thin.eot') format('embedded-opentype'),
-    url('../assets/fonts/gotham-thin.woff2') format('woff2'),
-    url('../assets/fonts/gotham-thin.woff') format('woff'),
-    url('../assets/fonts/gotham-thin.ttf') format('truetype'),
-    url('../assets/fonts/gotham-thin.svg#GothamThin') format('svg');
-  font-weight: 100;
-}
+  src: url("../assets/fonts/gotham-thin.eot");
+  src: url("../assets/fonts/gotham-thin.eot") format("embedded-opentype"), url("../assets/fonts/gotham-thin.woff2") format("woff2"), url("../assets/fonts/gotham-thin.woff") format("woff"), url("../assets/fonts/gotham-thin.ttf") format("truetype"), url("../assets/fonts/gotham-thin.svg#GothamThin") format("svg");
+  font-weight: 100; }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('../assets/fonts/gotham-light.eot');
-  src: url('../assets/fonts/gotham-light.eot') format('embedded-opentype'),
-    url('../assets/fonts/gotham-light.woff2') format('woff2'),
-    url('../assets/fonts/gotham-light.woff') format('woff'),
-    url('../assets/fonts/gotham-light.ttf') format('truetype'),
-    url('../assets/fonts/gotham-light.svg#GothamThin') format('svg');
-  font-weight: 200;
-}
+  src: url("../assets/fonts/gotham-light.eot");
+  src: url("../assets/fonts/gotham-light.eot") format("embedded-opentype"), url("../assets/fonts/gotham-light.woff2") format("woff2"), url("../assets/fonts/gotham-light.woff") format("woff"), url("../assets/fonts/gotham-light.ttf") format("truetype"), url("../assets/fonts/gotham-light.svg#GothamThin") format("svg");
+  font-weight: 200; }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('../assets/fonts/gotham-book.eot');
-  src: url('../assets/fonts/gotham-book.eot') format('embedded-opentype'),
-    url('../assets/fonts/gotham-book.woff2') format('woff2'),
-    url('../assets/fonts/gotham-book.woff') format('woff'),
-    url('../assets/fonts/gotham-book.ttf') format('truetype'),
-    url('../assets/fonts/gotham-book.svg#GothamThin') format('svg');
-  font-weight: 400;
-}
+  src: url("../assets/fonts/gotham-book.eot");
+  src: url("../assets/fonts/gotham-book.eot") format("embedded-opentype"), url("../assets/fonts/gotham-book.woff2") format("woff2"), url("../assets/fonts/gotham-book.woff") format("woff"), url("../assets/fonts/gotham-book.ttf") format("truetype"), url("../assets/fonts/gotham-book.svg#GothamThin") format("svg");
+  font-weight: 400; }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('../assets/fonts/gotham-bold.eot');
-  src: url('../assets/fonts/gotham-bold.eot') format('embedded-opentype'),
-    url('../assets/fonts/gotham-bold.woff2') format('woff2'),
-    url('../assets/fonts/gotham-bold.woff') format('woff'),
-    url('../assets/fonts/gotham-bold.ttf') format('truetype'),
-    url('../assets/fonts/gotham-bold.svg#GothamThin') format('svg');
-  font-weight: 700;
-}
+  src: url("../assets/fonts/gotham-bold.eot");
+  src: url("../assets/fonts/gotham-bold.eot") format("embedded-opentype"), url("../assets/fonts/gotham-bold.woff2") format("woff2"), url("../assets/fonts/gotham-bold.woff") format("woff"), url("../assets/fonts/gotham-bold.ttf") format("truetype"), url("../assets/fonts/gotham-bold.svg#GothamThin") format("svg");
+  font-weight: 700; }
+
+/**
+ * Variables
+ */
+/**
+ * Colors
+ */
+/* Breakpoint mixin */
+/*
+* It create the current percent of a context on a reference using pixels
+* Thanks Ethan Marcotte
 */
-/** LAYOUT **/
-.loader, .loader:after {
-  border-radius: 50%;
-  width: 10em;
-  height: 10em; }
+/*
+* It returns the current percent of a context on a reference using pixels
+* Thanks Ethan Marcotte
+*/
+/*
+* It returns flexible value using 'target / context' formula.
+* Returns 'rem' as format.
+*/
+.fade-out-300, .fade-out-500, .fade-out-1000 {
+  opacity: 0; }
 
-#preload {
+.fade-out-300 {
+  transition: opacity 300ms ease-in-out 1s; }
+
+.fade-out-500 {
+  transition: opacity 500ms ease-in-out 1s; }
+
+.fade-out-1000 {
+  transition: opacity 1s ease-in-out 1s; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+main {
+  /* start 'enter' transition */
+  /* end 'enter' transition */ }
+  main.ng-enter {
+    /* transition on enter for .5s */
+    transition: .5s;
+    /* start with opacity 0 (invisible) */
+    opacity: 0; }
+  main.ng-enter-active {
+    /* end with opacity 1 (fade in) */
+    opacity: 1; }
+
+.preload {
   background: #0a1e23;
   position: fixed;
   top: 0;
   left: 0;
-  bottom: 0;
-  right: 0;
   width: 100%;
   height: 100%;
   z-index: 9999;
-  display: table; }
-
-.preload {
-  display: table-cell;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
-  text-align: center; }
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .preload__container {
+    width: 15.625rem;
+    height: auto;
+    text-align: center;
+    overflow: hidden; }
+  .preload__loader {
+    position: relative;
+    width: 6.5em;
+    height: 6.5em;
+    margin: 3rem auto;
+    border-style: solid;
+    border-width: 0.7em;
+    border-radius: 50%;
+    border-color: transparent transparent transparent #3498db;
+    text-indent: -9999em;
+    animation: 1.3s load linear infinite; }
   .preload img {
-    width: 200px;
+    max-width: 100%;
     margin: 0 auto; }
 
-.loader {
-  margin: 3em auto;
-  font-size: 10px;
-  position: relative;
-  text-indent: -9999em;
-  border-top: 1.1em solid rgba(255, 255, 255, 0);
-  border-right: 1.1em solid rgba(255, 255, 255, 0);
-  border-bottom: 1.1em solid rgba(255, 255, 255, 0);
-  border-left: 1.1em solid #3498db;
-  animation: 2s load linear infinite; }
-
 @-webkit-keyframes load {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@-moz-keyframes load {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@-ms-keyframes load {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+@-o-keyframes load {
   0% {
     transform: rotate(0deg); }
   100% {
@@ -94,58 +129,131 @@
   100% {
     transform: rotate(360deg); } }
 
+.icon {
+  font-size: 0.75rem;
+  clear: both;
+  display: block;
+  font-weight: 100; }
+  .icon.rain {
+    position: relative;
+    top: 8.75rem;
+    margin: 0 auto;
+    width: 5.625rem;
+    height: 2.5rem;
+    background: url("../assets/images/rain-icon.png") no-repeat;
+    background-size: 50%;
+    text-indent: 3.125rem;
+    padding-top: 1rem;
+    text-align: right; }
+  .icon.share {
+    position: relative;
+    top: 12.5rem;
+    display: inline-block;
+    width: 30%;
+    padding: 0.625rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none; }
+    .icon.share.facebook {
+      background: #15347b; }
+      .icon.share.facebook:hover {
+        background: #12295e; }
+    .icon.share.twitter {
+      background: #0ac6f9; }
+      .icon.share.twitter:hover {
+        background: #0da1c9; }
+
+.menu-icon {
+  display: none; }
+
 .header {
   width: 100%;
-  height: 100px;
+  height: 60px;
   background: #0a1c20; }
+  @media only screen and (min-width: 48rem) {
+    .header {
+      height: 100px; } }
   .header h1 {
     position: relative;
-    width: 100px;
-    height: 57px;
-    top: 20px;
+    width: 60px;
+    height: 34px;
+    top: 13px;
     margin: 0 auto;
+    background: url("../assets/images/logo.png") no-repeat;
     background-size: 100%; }
+    @media only screen and (min-width: 48rem) {
+      .header h1 {
+        width: 100px;
+        height: 57px;
+        top: 20px; } }
     .header h1.home {
       top: 140px;
-      width: 400px !important;
-      height: 228px !important; }
-    .header h1 a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-indent: -99999px; }
+      width: 400px;
+      height: 228px;
+      transition: all, 2s, linear; }
+  .header a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px; }
 
-.menu {
+.nav {
   position: absolute;
-  width: auto;
+  width: 100%;
   height: 100%;
-  z-index: 6;
-  top: 15%;
-  left: 80px;
-  color: #fff; }
-  .menu ul li {
-    font-size: 12px;
-    cursor: pointer;
-    width: auto;
+  z-index: 9999;
+  top: 60px;
+  left: 100%;
+  color: #fff;
+  background: #0a1e23;
+  font-weight: 200;
+  transition: all, 0.5s, ease-in-out; }
+  @media only screen and (min-width: 48rem) {
+    .nav {
+      width: auto;
+      z-index: 10;
+      top: 15%;
+      left: 80px;
+      background: none; } }
+  .nav--is-open {
+    left: 0; }
+    @media only screen and (min-width: 48rem) {
+      .nav--is-open {
+        left: 80px; } }
+  .nav ul {
     position: relative;
-    margin-bottom: 20px;
-    top: 100px; }
-    .menu ul li a {
-      padding: 10px;
-      text-align: center;
-      display: block;
-      color: #fff;
-      text-decoration: none; }
-      .menu ul li a:hover {
-        color: #efefef;
-        background: #08191d; }
+    top: 50px; }
+    @media only screen and (min-width: 48rem) {
+      .nav ul {
+        top: 100px; } }
+  .nav li {
+    position: relative;
+    font-size: 0.75rem;
+    margin: 10px 0; }
+  .nav a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    color: #fff;
+    text-decoration: none; }
+    .nav a:hover, .nav a.is-active {
+      color: #efefef;
+      background: #08191d;
+      border-radius: 2.5rem; }
+      @media only screen and (min-width: 48rem) {
+        .nav a:hover, .nav a.is-active {
+          top: 100px;
+          border-radius: 0; } }
 
 body, html {
   width: 100%;
   height: 100%;
   background: #0a1e23;
+  background: url("../assets/images/bg-lines.png") #0a1e23;
   background-repeat: repeat;
-  overflow: hidden !important; }
+  overflow: hidden !important;
+  font-family: 'Gotham', sans-serif; }
 
 .main {
   overflow: hidden; }
@@ -155,15 +263,63 @@ body, html {
   width: 100%;
   top: 50%;
   height: 3000px;
-  background-size: 100%; }
+  background: url("../assets/images/bg-water.png") no-repeat;
+  background-size: 100%;
+  transition: all 2s ease;
+  animation: 2s waterAnimation linear infinite; }
+
+@-webkit-keyframes waterAnimation {
+  0% {
+    background-position: 0 0; }
+  50% {
+    background-position: 0 10px; }
+  100% {
+    background-position: 0 0; } }
+
+@-moz-keyframes waterAnimation {
+  0% {
+    background-position: 0 0; }
+  50% {
+    background-position: 0 10px; }
+  100% {
+    background-position: 0 0; } }
+
+@-ms-keyframes waterAnimation {
+  0% {
+    background-position: 0 0; }
+  50% {
+    background-position: 0 10px; }
+  100% {
+    background-position: 0 0; } }
+
+@-o-keyframes waterAnimation {
+  0% {
+    background-position: 0 0; }
+  50% {
+    background-position: 0 10px; }
+  100% {
+    background-position: 0 0; } }
+
+@keyframes waterAnimation {
+  0% {
+    background-position: 0 0; }
+  50% {
+    background-position: 0 10px; }
+  100% {
+    background-position: 0 0; } }
 
 .ruler {
   position: absolute;
   height: 81%;
   width: 30px;
-  top: 120px;
-  left: 40px;
+  top: 70px;
+  left: 20px;
+  background: url("../assets/images/ruler.png");
   background-size: cover; }
+  @media only screen and (min-width: 48rem) {
+    .ruler {
+      top: 120px;
+      left: 40px; } }
 
 .instructions {
   z-index: 9;
@@ -172,12 +328,15 @@ body, html {
   margin: 0 auto;
   color: #fff;
   text-align: center;
-  opacity: 0; }
-  .instructions.show {
+  opacity: 0;
+  display: none; }
+  .instructions--is-visible {
     margin-top: 140px;
-    opacity: 1; }
+    opacity: 1;
+    display: block; }
   .instructions h3 {
-    font-size: 35px; }
+    font-size: 2.1875rem;
+    font-weight: 100; }
 
 .content {
   position: relative;
@@ -187,28 +346,34 @@ body, html {
   color: #fff;
   display: none;
   text-align: center; }
-  .content.show {
+  .content--is-visible {
     display: block; }
   .content h3 {
     margin-left: -70px;
-    font-size: 35px; }
+    font-size: 35px;
+    font-weight: 100; }
   .content h2 {
-    margin-top: -10px;
-    font-size: 55px; }
+    margin: -3.125rem 0 0;
+    font-size: 55px;
+    font-weight: bold; }
   .content .indicator {
     position: relative;
-    width: 397px;
-    height: 460px;
+    width: 25rem;
+    height: 30rem;
     margin: 0 auto;
+    background: url("../assets/images/indicator.png") no-repeat;
     text-align: center;
-    z-index: 5; }
+    z-index: 5;
+    animation: 2.5s waterAnimation linear infinite 2s; }
     .content .indicator .pct {
       position: relative;
-      top: 140px;
-      font-size: 150px;
-      letter-spacing: -12px; }
+      top: 7.5rem;
+      font-size: 9.375rem;
+      letter-spacing: -12px;
+      font-weight: bold; }
       .content .indicator .pct strong {
-        font-size: 80px; }
+        font-size: 5rem;
+        font-weight: bold; }
 
 .footer {
   position: absolute;
