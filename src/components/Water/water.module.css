@@ -1,0 +1,21 @@
+.water {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  height: 3000px;
+  background: url('/assets/images/bg-water.png') no-repeat;
+  background-size: 100%;
+  transition: top 2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .water {
+    animation: 2s waterAnimation linear infinite;
+  }
+}
+
+@keyframes waterAnimation {
+  0% { background-position: 0 0; }
+  50% { background-position: 0 10px; }
+  100% { background-position: 0 0; }
+}

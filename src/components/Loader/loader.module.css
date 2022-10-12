@@ -1,0 +1,48 @@
+.preload {
+  background: var(--bg-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preload--hidden {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+
+}
+
+.preload img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.preload__container {
+  width: calc(250px + 0rem);
+  height: auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.preload__loader {
+  position: relative;
+  width: 6.5em;
+  height: 6.5em;
+  margin: 3rem auto;
+  border-style: solid;
+  border-width: 0.7em;
+  border-radius: 50%;
+  border-color: transparent transparent transparent var(--blue-cyan);
+  text-indent: -9999em;
+  animation: 1.3s load linear infinite;
+}
+
+@keyframes load {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

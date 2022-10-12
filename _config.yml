@@ -1,7 +1,0 @@
-name: Nossa Água São Paulo
-description: Acompanhe o nível das represas que abastecem São Paulo e compartilhe.
-keywords: monitoramento,acompanhamento,dados,cantareira,mananciais,são paulo,sabesp,água,represas,níveis
-author: Rafaell Lycan
-baseurl:
-url: https://rafaell-lycan.com/nossa-agua
-exclude: [README.md, LICENSE, package.json, node_modules, .babelrc, webpack.config.js, .editorconfig, .gitignore]
